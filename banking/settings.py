@@ -75,7 +75,17 @@ WSGI_APPLICATION = 'banking.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': 'localhost',
+        'NAME': BASE_DIR / 'banking',
+        'USER': 'postgres',
+        'PASSWORD': 'unicesmag',
+        'PORT': '5432',
+    },
+
+
+    'local': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'banking.sqlite3',
     }
 }
 
