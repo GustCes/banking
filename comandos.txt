@@ -1,0 +1,32 @@
+activar venv
+source venv/Scripts/activate
+
+
+---------------comandos de python------------------
+py manage.py
+
+
+py manage.py showmigrations
+    -la primera mingracion sera 0001_initial, los demas seran como un comentario explicando cada operacion con 0002, 0003 etc
+
+ver migraciones de algo en especifico: auth, sessions, admin, etc con cualquiera
+py manage.py showmigrations authma
+
+python manage.py startapp (nombre del modulo o APP)
+
+ciclo de vida para la base de datos
+1. create banking database in postgreSQL (cmd)
+
+2. connetc to banking DB with settings file
+    user: posrtgres
+    port: 5432
+    host: localhost
+    dbname: banking
+  3.2 test connection database
+
+3. create new models
+    -entity-relation model
+
+4. make migrations
+
+5.migrate to database
