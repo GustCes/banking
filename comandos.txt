@@ -5,14 +5,25 @@ source venv/Scripts/activate
 ---------------comandos de python------------------
 py manage.py
 
+py manage.py runserver
+a veces se le agrega el 8080 en caso de que el puerto usual este ocupado
 
 py manage.py showmigrations
     -la primera mingracion sera 0001_initial, los demas seran como un comentario explicando cada operacion con 0002, 0003 etc
+py manage.py makemigrations
+    -crea una migracion manualmente (es como un comentario de los cambios hechos)
 
 ver migraciones de algo en especifico: auth, sessions, admin, etc con cualquiera
 py manage.py showmigrations authma
 
-python manage.py startapp (nombre del modulo o APP)
+python manage.py startapp (nombre del modulo o APP) //para crear 
+
+
+            python manage.py shell
+-interactua con la base de datos desde python
+GET DATA: User.objects.all() -> select * from users;
+
+INSERT DATA: User(firstname="nombre",lastname="apellido generico" etc)
 
 ciclo de vida para la base de datos
 1. create banking database in postgreSQL (cmd)
@@ -30,3 +41,22 @@ ciclo de vida para la base de datos
 4. make migrations
 
 5.migrate to database
+
+
+crear objetos con python manage.py shell
+    python manage.py shell
+    (se sale de este menu con exit)
+    
+    llamar modelos ->
+    from authentication.models import User (o cualquier clase/modelo ahi)
+
+    preparar datos para guardar ->
+    data=User(firstname="Sarah", lastname="Connor")
+
+    guardar
+    Push to database
+    data.save()
+
+    imprimir
+    User.objects.all()
+
