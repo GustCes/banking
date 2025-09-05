@@ -51,12 +51,23 @@ crear objetos con python manage.py shell
     from authentication.models import User (o cualquier clase/modelo ahi)
 
     preparar datos para guardar ->
-    data=User(firstname="Sarah", lastname="Connor")
+    data=User(first_name="Sarah", last_name="Connor")
 
     guardar
-    Push to database
     data.save()
 
     imprimir
     User.objects.all()
 
+migraciones para clases
+    1. python manage.py showmigrations authentication
+    1.5 crear las tablas
+    2. python manage.py makemigrations
+    3. python manage.py migrate
+
+    4.añadir datos con shell
+    python manage.py shell
+    from authentication.models import Department
+    data = Department(name="Nariño", abrev="NAR")
+    data.save()
+    Department.objects.all()
