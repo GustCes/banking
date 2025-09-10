@@ -2,6 +2,34 @@ from django.db import models
 
 # Create your models here.
 # escribir en singular primera mayuscula
+
+class Countries(models.Model):
+    name = models.CharField(max_length=20)
+    abrev = models.CharField(max_length=5)
+    #1created_at = models.DateTimeField(auto_now_add=True)
+    #1updated_at = models.DateTimeField(auto_now=True)
+
+
+##2
+#class Departments(models.Model):
+#    name = models.CharField(max_length=20)
+#    abrev = models.CharField(max_length=5)
+#    country_id = models.ForeignKey(Countries, on_delete=models.CASCADE)
+#    created_at = models.DateTimeField(auto_now_add=True)
+#    updated_at = models.DateTimeField(auto_now=True)
+#    deleted_at = models.DateTimeField(null=True, blank=True)
+
+##3
+#class Cities(models.Model):
+#    name = models.CharField(max_length=20)
+#    abrev = models.CharField(max_length=5)
+#    department_id = models.ForeignKey(Departments, on_delete=models.CASCADE)
+#    created_at = models.DateTimeField(auto_now_add=True)
+#    updated_at = models.DateTimeField(auto_now=True)
+#    deleted_at = models.DateTimeField(null=True, blank=True)
+
+##4
+
 class User(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20, blank=True)
@@ -12,10 +40,5 @@ class User(models.Model):
     #status = models.BooleanField(default=True)
     #created_at = models.DateTimeField(auto_now_add=True)
     #updated_at = models.DateTimeField(auto_now_add=True)
+    #deleted_at = models.DateTimeField(null=True, blank=True)
 
-class Countries(models.Model):
-    name = models.CharField(max_length=20)
-    abrev = models.CharField(max_length=5)
-    #created_at = models.DateTimeField(auto_now_add=True)
-    #updated_at = models.DateTimeField(auto_now=True)
-    #user_id = models.ForeignKey(User, on_delete=models.CASCADE) #ejemplo de llave foranea
