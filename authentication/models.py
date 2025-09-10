@@ -6,18 +6,18 @@ from django.db import models
 class Countries(models.Model):
     name = models.CharField(max_length=20)
     abrev = models.CharField(max_length=5)
-    #1created_at = models.DateTimeField(auto_now_add=True)
-    #1updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
-##2
-#class Departments(models.Model):
-#    name = models.CharField(max_length=20)
-#    abrev = models.CharField(max_length=5)
-#    country_id = models.ForeignKey(Countries, on_delete=models.CASCADE)
-#    created_at = models.DateTimeField(auto_now_add=True)
-#    updated_at = models.DateTimeField(auto_now=True)
-#    deleted_at = models.DateTimeField(null=True, blank=True)
+
+class Departments(models.Model):
+    name = models.CharField(max_length=20)
+    abrev = models.CharField(max_length=5)
+    country_id = models.ForeignKey(Countries, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
 ##3
 #class Cities(models.Model):
