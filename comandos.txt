@@ -71,3 +71,5 @@ migraciones para clases
     data = Department(name="Nariño", abrev="NAR")
     data.save()
     Department.objects.all()
+
+python manage.py migrate nombreapp num_migracion zero
