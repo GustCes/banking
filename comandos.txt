@@ -1,7 +1,7 @@
 activar venv
 source venv/Scripts/activate
 
-
+git stash guarda cambios temporales
 ---------------comandos de python------------------
 py manage.py
 

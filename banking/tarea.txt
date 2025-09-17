@@ -1,0 +1,5 @@
+1. recuperar cuenta de supabase
+2. crear nueva bd banking
+3. configurar settings supabase connection with supabase credentials
+4. apply migrations to supabase
+5. insert some info to both DBs
