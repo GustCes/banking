@@ -69,7 +69,7 @@ migraciones para clases
     python manage.py shell
     from authentication.models import Department
     data = Department(name="Nariño", abrev="NAR")
-    data.save()
+    data.save() - data.save(using='supabase')
     Department.objects.all()
 
 python manage.py migrate nombreapp num_migracion zero

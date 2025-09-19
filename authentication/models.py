@@ -36,7 +36,7 @@ class User(models.Model):
     email = models.EmailField(max_length=150, unique=True, default='usermail')
     password = models.TextField(max_length=128, unique=True, default='userpass')
     #se que la contraseña no es unica pero quise hacerla por un meme que vi
-    city_id = models.ForeignKey(City, on_delete=models.CASCADE)
+    city_id = models.ForeignKey(City, on_delete=models.CASCADE, blank=True, null=True)
     mobile_number = models.CharField(max_length=15, unique=True, default='1234567890')
     address= models.CharField(max_length=255, default='enrique segoviano')
     status = models.BooleanField(default=True)
