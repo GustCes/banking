@@ -9,7 +9,8 @@ class Country(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-
+    def __str__(self):
+        return self.name + ' ' + self.abrev
 
 class Department(models.Model):
     name = models.CharField(max_length=20, default='departmentname')
@@ -18,7 +19,8 @@ class Department(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-
+    def __str__(self):
+        return f"{self.name} {self.abrev}"
 
 class City(models.Model):
     name = models.CharField(max_length=20, default='cityname')
@@ -43,6 +45,6 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-
-#no se que hace esto pero se añadio solo, lo dejare comentareado por si acaso
-#    def __str__(self):
+#sirve para que los objetos se muestren con un nombre
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name

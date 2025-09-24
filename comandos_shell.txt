@@ -1,0 +1,10 @@
+guardar llave foranea para llenar datos desde la consola
+    id_v=objetoforaneo.objects.using("nombre de la bd si no es la default").get(pk=2) #o cualquier otro numero
+    objetonombre.objects.using("igual que arriba").create(id_foraneo=id_v)
+
+limpiar shell
+    import os
+    os.system('clear')  - para linux
+    os.system('cls')    - windows
+
+Department.objects.all()
