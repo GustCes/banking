@@ -19,7 +19,7 @@ py manage.py showmigrations authma
 python manage.py startapp (nombre del modulo o APP) //para crear 
 
 
-            python manage.py shell
+python manage.py shell
 -interactua con la base de datos desde python
 GET DATA: User.objects.all() -> select * from users;
 

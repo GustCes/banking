@@ -1,6 +1,8 @@
 guardar llave foranea para llenar datos desde la consola
     id_v=objetoforaneo.objects.using("nombre de la bd si no es la default").get(pk=2) #o cualquier otro numero
+        city=City.objects.get(pk=1)
     objetonombre.objects.using("igual que arriba").create(id_foraneo=id_v)
+        City.objects.create(bla,bla)
 
 limpiar shell
     import os

@@ -29,8 +29,8 @@ class City(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
-
-
+    def __str__(self):
+        return f"{self.name} {self.abrev}"
 
 class User(models.Model):
     first_name = models.CharField(max_length=20, default='username')
@@ -39,7 +39,7 @@ class User(models.Model):
     password = models.TextField(max_length=128, unique=True, default='userpass')
     #se que la contraseña no es unica pero quise hacerla por un meme que vi
     city_id = models.ForeignKey(City, on_delete=models.CASCADE, blank=True, null=True)
-    mobile_number = models.CharField(max_length=15, unique=True, default='1234567890')
+    mobile_number = models.CharField(max_length=15, default='1234567890')
     address= models.CharField(max_length=255, default='enrique segoviano')
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
