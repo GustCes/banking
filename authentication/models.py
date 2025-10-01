@@ -6,11 +6,12 @@ from django.db import models
 class Country(models.Model):
     name = models.CharField(max_length=20, default='countryname')
     abrev = models.CharField(max_length=5, default='abv')
+    status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
     def __str__(self):
-        return self.name + ' ' + self.abrev
+        return f"{self.name} {self.abrev} {'active' if self.status==True else 'inactive'}"
 
 class Department(models.Model):
     name = models.CharField(max_length=20, default='departmentname')

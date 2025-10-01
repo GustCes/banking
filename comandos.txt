@@ -73,3 +73,14 @@ migraciones para clases
     Department.objects.all()
 
 python manage.py migrate nombreapp num_migracion zero
+
+para crear vistas
+1.crear la vista en views.py
+2. crear urls.py en la app(si no existe)
+3. añadur una direccion en urls.py (de la app)
+4. añadir urls_app en el urls principal
+
+tarea- crear 3 vistas (only labels)
+1, display all registered countries
+2, display all registered departments
+2, display all registered cities
