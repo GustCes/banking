@@ -18,9 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('auth/', include('authentication.urls')),
-    path('vxg_server/', admin.site.urls),
-    path('countries/', admin.site.urls),
-    path('departments/', admin.site.urls),
-    path('cities/', admin.site.urls),
+    path('auth/', include('authentication.urls'),
+         include('authentication_app.urls')),
+    path('admin/', admin.site.urls)
 ]

@@ -59,7 +59,7 @@ ROOT_URLCONF = 'banking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +70,11 @@ TEMPLATES = [
         },
     },
 ]
+
+#archivos estaticos para desarrollo
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] #carpeta para css/js
+STATIC_ROOT = BASE_DIR / 'staticfiles' #para collectstatic en produccion
 
 WSGI_APPLICATION = 'banking.wsgi.application'
 
